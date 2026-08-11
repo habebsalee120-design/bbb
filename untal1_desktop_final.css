@@ -1283,3 +1283,245 @@ footer {
 .body {
     overflow-x: hidden !important;
 }
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* للأجهزة اللوحية والشاشات المتوسطة */
+@media (max-width: 900px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+        width: 100%;
+        min-width: 0;
+        padding: 0 16px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 3px;
+        background: var(--text);
+    }
+
+    nav#mainNav {
+        display: none !important;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        background: var(--bg-white);
+        z-index: 9999;
+    }
+
+    nav#mainNav.open {
+        display: flex !important;
+    }
+
+    /* القوائم */
+    .dropdown,
+    .nav-link,
+    .dropbtn {
+        width: 100%;
+    }
+
+    .dropdown-menu,
+    .sub-menu {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    /* Hero */
+    .hero-container {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-text {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-desc {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 650px;
+        margin: auto;
+    }
+
+    /* الإحصائيات */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* عن الجامعة */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* الكليات */
+    .college-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* الأخبار */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* الخدمات */
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   الهواتف
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .logo-text p {
+        font-size: 10px;
+    }
+
+    /* Hero */
+    .hero-container {
+        padding: 45px 15px;
+    }
+
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .hero-desc {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin: auto;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        width: 100%;
+    }
+
+    /* الإحصائيات */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* الأقسام */
+    .about,
+    .colleges,
+    .news,
+    .services {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* الكليات */
+    .college-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* الأخبار */
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* الخدمات */
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   الهواتف الصغيرة جداً
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .logo-text h1 {
+        font-size: 14px;
+    }
+
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
