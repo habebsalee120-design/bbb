@@ -1,4 +1,7 @@
-
+يظهر بيه جهة بيضة شنو هذا كود html,
+body {
+    min-width: 1200px;
+}
 
 /* ===========================
    CSS Variables & Reset
@@ -25,20 +28,15 @@
     --font-body: 'Cairo', sans-serif;
     --font-heading: 'Amiri', serif;
 }
+html, body {
+    overflow-x: hidden;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important; /* يمنع أي عنصر من الخروج عن الشاشة أفقتياً */
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 
 html { scroll-behavior: smooth; }
 
@@ -1215,63 +1213,124 @@ footer {
    Same desktop layout on desktop, tablet and phone.
    No responsive rearrangement.
    ========================================================= */
-/* =========================================
-   FIX OVERFLOW & RESPONSIVE LAYOUT
-   ========================================= */
 
-/* منع الخروج الأفقي على مستوى المستند */
-html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+html {
     margin: 0 !important;
     padding: 0 !important;
+    min-width: 1200px !important;
+    overflow-x: auto !important;
 }
 
-/* تحويل الشبكات الصلبة إلى أعمدة متجاوبة في الشاشات الصغيرة */
-@media (max-width: 992px) {
-    .navbar,
-    .hero-container,
-    .stats-grid,
-    .about-container,
-    .college-grid,
-    .news-grid,
-    .service-grid,
-    .footer-grid {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-    }
-
-    .hero-container,
-    .about-grid,
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-    }
-
-    .stats-grid,
-    .college-grid,
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
-    }
-
-    .news-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .hero-img-wrapper {
-        width: 100% !important;
-    }
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 1200px !important;
+    width: 100% !important;
+    max-width: none !important;
+    overflow-x: visible !important;
 }
 
-@media (max-width: 576px) {
-    .stats-grid,
-    .college-grid,
-    .service-grid {
-        grid-template-columns: 1fr !important;
-    }
+/* Desktop navigation */
+.menu-toggle {
+    display: none !important;
 }
 
+nav#mainNav {
+    display: flex !important;
+}
+
+/* Desktop grid layout */
+.hero-container {
+    grid-template-columns: 1fr 1fr !important;
+}
+
+.about-grid {
+    grid-template-columns: 1fr 340px !important;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.college-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.service-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr !important;
+}
+
+/* Desktop content widths */
+.navbar {
+    max-width: 1400px !important;
+}
+
+.hero-container,
+.stats-grid,
+.about-container,
+.college-grid,
+.news-grid,
+.service-grid,
+.footer-grid {
+    max-width: 1200px !important;
+}
+/* ط¥ط²ط§ظ„ط© ط§ظ„ظپط±ط§ط؛ 
+/* =========================================
+   DESKTOP WIDTH - NO LEFT WHITE SPACE
+   ========================================= */
+
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1200px !important;
+    min-width: 1200px !important;
+    direction: rtl !important;
+    overflow-x: auto !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1200px !important;
+    min-width: 1200px !important;
+    max-width: none !important;
+    direction: rtl !important;
+    overflow-x: visible !important;
+}
+
+/* ظ„ط§ طھط¬ط¹ظ„ ط§ظ„ظ…ط­طھظˆظ‰ ظٹطھظˆط³ط· ظ†ظپط³ظ‡ ط¨ط§ظ„ظ†ط³ط¨ط© ظ„ط´ط§ط´ط© ط§ظ„ظ‡ط§طھظپ */
+header {
+    width: 1200px !important;
+    margin: 0 !important;
+}
+
+main {
+    width: 1200px !important;
+    margin: 0 !important;
+}
+
+footer {
+    width: 1200px !important;
+    margin: 0 !important;
+}
+
+/* طھط«ط¨ظٹطھ ط§ظ„ط¹ظ†ط§طµط± ط§ظ„ط±ط¦ظٹط³ظٹط© */
+.navbar {
+    width: 1200px !important;
+    max-width: 1200px !important;
+    margin: 0 !important;
+}
+
+.hero-container {
+    width: 1200px !important;
+    max-width: 1200px !important;
+    margin: 0 !important;
+                       }
