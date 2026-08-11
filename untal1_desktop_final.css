@@ -1,3 +1,8 @@
+html,
+body {
+    min-width: 1200px;
+}
+
 /* ===========================
    CSS Variables & Reset
    =========================== */
@@ -1203,27 +1208,29 @@ footer {
     color: var(--accent-light);
 }
 
-
-/* تحسينات الشاشات الصغيرة */
-
 /* =========================================================
-   DESKTOP VERSION ON ALL DEVICES
-   No responsive/mobile layout. On narrow screens the page
-   remains desktop-sized and can be scrolled horizontally.
+   FINAL DESKTOP LAYOUT
+   Same desktop layout on desktop, tablet and phone.
+   No responsive rearrangement.
    ========================================================= */
+
 html {
+    margin: 0 !important;
+    padding: 0 !important;
     min-width: 1200px !important;
     overflow-x: auto !important;
 }
 
 body {
-    width: 1200px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     min-width: 1200px !important;
+    width: 100% !important;
     max-width: none !important;
     overflow-x: visible !important;
 }
 
-/* Keep desktop navigation visible */
+/* Desktop navigation */
 .menu-toggle {
     display: none !important;
 }
@@ -1232,102 +1239,46 @@ nav#mainNav {
     display: flex !important;
 }
 
-/* Keep the main desktop containers at their desktop width */
-.navbar,
+/* Desktop grid layout */
+.hero-container {
+    grid-template-columns: 1fr 1fr !important;
+}
+
+.about-grid {
+    grid-template-columns: 1fr 340px !important;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.college-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.service-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr !important;
+}
+
+/* Desktop content widths */
+.navbar {
+    max-width: 1400px !important;
+}
+
 .hero-container,
+.stats-grid,
 .about-container,
-.section-title,
+.college-grid,
 .news-grid,
 .service-grid,
-.college-grid,
-.stats-grid,
 .footer-grid {
-    max-width: 1200px;
-}
-/* =========================================
-   SAME DESKTOP DESIGN ON ALL DEVICES
-   ========================================= 
-/* =========================================
-   DESKTOP + MOBILE
-   نفس تصميم سطح المكتب على جميع الأجهزة
-   ========================================= */
-
-html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 1200px;
-}
-
-/* الكمبيوتر */
-@media (min-width: 901px) {
-
-    body {
-        width: 100%;
-        min-width: 1200px;
-        overflow-x: auto;
-    }
-}
-
-
-/* الهاتف والتابلت
-   إبقاء تصميم سطح المكتب كما هو */
-@media (max-width: 900px) {
-
-    html {
-        width: 1200px;
-        min-width: 1200px;
-    }
-
-    body {
-        width: 1200px !important;
-        min-width: 1200px !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* لا تحول التصميم إلى Mobile Layout */
-    .hero-container {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .about-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .college-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    .news-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    .service-grid {
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr) !important;
-    }
-
-    /* إلغاء تحويل القائمة إلى قائمة هاتف */
-    .menu-toggle {
-        display: none !important;
-    }
-
-    nav#mainNav {
-        display: flex !important;
-    }
+    max-width: 1200px !important;
 }
