@@ -24,7 +24,6 @@
     --font-heading: 'Amiri', serif;
 }
 html, body {
-   
     overflow-x: hidden;
 }
 
@@ -58,7 +57,7 @@ img { max-width: 100%; display: block; }
 header {
     position: sticky;
     top: 0;
-    z-index: 10000;
+    z-index: 1000;
     background: var(--bg-white);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
@@ -203,7 +202,7 @@ nav {
     visibility: hidden;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    z-index: 10000;
+    z-index: 1000;
     border: 1px solid var(--border);
     pointer-events: none;
 }
@@ -474,7 +473,7 @@ nav {
 .btn-secondary:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
 
 .hero-img-wrapper {
-    width: 100%;
+    width: 130%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,.3);
@@ -826,18 +825,7 @@ nav {
     cursor: not-allowed;
 }
 
-@media (max-width: 900px) {
-    .college-grid,
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    .college-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 .college-info h3 {
     font-family: var(--font-heading);
@@ -1113,130 +1101,8 @@ footer {
 /* ===========================
    Responsive - توافق الجوال مع القوائم
    =========================== */
-@media (max-width: 900px) {
-    /* زر القائمة */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: var(--radius-sm);
-    }
 
-    .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--text);
-        border-radius: 2px;
-        transition: var(--transition);
-    }
 
-    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.active span:nth-child(2) { opacity: 0; }
-    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    nav#mainNav {
-        display: none;
-        position: fixed;
-        top: 72px;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: var(--bg-white);
-        border-top: 1px solid var(--border);
-        padding: 20px;
-        overflow-y: auto;
-        flex-direction: column;
-        gap: 4px;
-        z-index: 999;
-    }
-
-    nav#mainNav.open { display: flex; }
-
-    .dropdown, .dropbtn, .nav-link {
-        width: 100%;
-    }
-
-    .dropbtn, .nav-link {
-        padding: 12px 16px;
-        border-radius: var(--radius-sm);
-        border-bottom: 1px solid var(--border);
-    }
-
-    /* إعادة تعيين القوائم للجوال */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: var(--bg);
-        border-radius: var(--radius-sm);
-        margin-top: 4px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        transition: none;
-    }
-    
-    .dropdown:hover .dropdown-menu { display: none; }
-    .dropdown.open > .dropdown-menu { display: block; }
-
-    .sub-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: #f0f4f8;
-        margin-top: 4px;
-        padding-right: 20px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        max-height: none;
-        overflow-y: visible;
-    }
-    
-    .sub-dropdown:hover > .sub-menu { display: none; }
-    .sub-dropdown.open > .sub-menu { display: block; }
-
-    /* إزالة النص الافتراضي في الشاشات الصغيرة لتجنب التكرار */
-    .dropdown-menu .sub-dropdown > ul:first-child::before {
-        content: "▼ خدمات إلكترونية";
-        background: var(--border);
-    }
-
-    /* باقي تحسينات الجوال */
-    .hero-container { grid-template-columns: 1fr; text-align: center; padding: 60px 24px; }
-    .hero-image { display: none; }
-    .hero-desc { margin: 0 auto 36px; }
-    .hero-buttons { justify-content: center; }
-
-    .news-grid { grid-template-columns: 1fr; max-width: 480px; }
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
-    .college-grid { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card { border-left: 1px solid var(--border); }
-    .stat-card:nth-child(2) { border-left: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .footer-brand { grid-column: 1 / -1; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-side { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .logo-card, .quick-info-card { margin-bottom: 0; }
-}
-
-@media (max-width: 600px) {
-    .college-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card { border-left: 1px solid var(--border); }
-    .stat-card:nth-child(even) { border-left: none; }
-    .service-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .about-side { grid-template-columns: 1fr; }
-}
 
 /* ===========================
    تحسينات إضافية للقوائم
@@ -1260,59 +1126,7 @@ footer {
 /* ===========================
    Print / Page Layout Styles
    =========================== */
-@media print {
-    * {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
 
-    body {
-        width: 210mm;
-        height: 297mm;
-        background: white !important;
-        color: black !important;
-    }
-
-    html {
-        width: 210mm;
-        height: 297mm;
-    }
-
-    header {
-        position: static !important;
-        box-shadow: none !important;
-        border-bottom: 2px solid #333 !important;
-        margin-bottom: 20px;
-    }
-
-    .navbar {
-        padding: 10px 20px !important;
-        height: auto !important;
-    }
-
-    nav { display: none; }
-    .menu-toggle { display: none; }
-
-    section { page-break-inside: avoid; }
-
-    .hero-container {
-        grid-template-columns: 1fr !important;
-        padding: 20px !important;
-    }
-
-    .hero-image { display: none; }
-    .hero-bg { display: none; }
-
-    .about-grid { grid-template-columns: 1fr !important; }
-    .about-side { display: none; }
-
-    .college-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .news-grid { grid-template-columns: 1fr !important; }
-    .service-grid { display: none; }
-    .footer-grid { grid-template-columns: 1fr !important; }
-
-    a { text-decoration: underline; }
-}
 
 /* ===========================
    Image Modal / Lightbox
@@ -1336,15 +1150,6 @@ footer {
     display: flex !important;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .modal-content {
     max-width: 90%;
     max-height: 90%;
@@ -1354,16 +1159,7 @@ footer {
     animation: slideIn 0.3s ease;
 }
 
-@keyframes slideIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
+
 
 .modal-close {
     position: absolute;
@@ -1385,57 +1181,130 @@ footer {
 .modal-close:hover {
     color: var(--accent-light);
 }
+        /* التجاوب مع الأجهزة الذكية */
+        @media (max-width: 900px) {
+            .main-header {
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: flex-start;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav.open {
+                max-height: 500px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                width: 100%;
+                padding: 12px 10px;
+            }
+
+            nav ul li .dropdown {
+                display: block;
+                position: static;
+                box-shadow: none;
+                padding-right: 15px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav ul li.open > .dropdown {
+                max-height: 1000px;
+            }
+
+            nav ul li .dropdown a {
+                padding: 10px 15px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .info-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .body {
+            font-family: 'Cairo', sans-serif;
+
+        }
+        .text-mobile {
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .text-mobile {
+                display: none;
+            }
+        }
+        @media (min-width: 769px) {
+            .text-mobile {
+                display: block;
+            }
+        }
+        header,
+.main-header {
+  width: 100%;
+  max-width: 100%;
+}
+
+.main-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.main-header > * {
+  min-width: 0;
+}
 
 
-/* تحسينات الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .modal-content {
-        max-width: 95%;
-        max-height: 80%;
-    }
-    
-    .modal-close {
-        top: 15px;
-        right: 15px;
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-}
-@media (max-width: 900px) {
-    /* إصلاح القوائم المتداخلة في الجوال */
-.sub-dropdown > .sub-menu,
-.sub-menu .sub-dropdown > .sub-menu,
-.sub-menu .sub-menu .sub-menu {
-    position: static !important;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100%;
-    margin-top: 5px;
-    margin-right: 0;
-    padding-right: 20px;
-    box-shadow: none;
-    border: none;
-    background: #f5f7fa;
-    display: none;
-}
+        
 
-.sub-dropdown.open > .sub-menu {
-display: block !important;
- position: static !important;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100%;
-    margin-top: 5px;
-    margin-right: 0;
-    padding-right: 20px;
-    box-shadow: none;
-    border: none;
-    background: #f5f7fa;
-    display: none;
-}
-}
+
