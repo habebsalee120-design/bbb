@@ -1,8 +1,3 @@
-يظهر بيه جهة بيضة شنو هذا كود html,
-body {
-    min-width: 1200px;
-}
-
 /* ===========================
    CSS Variables & Reset
    =========================== */
@@ -29,7 +24,14 @@ body {
     --font-heading: 'Amiri', serif;
 }
 html, body {
+     width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
 }
 
 *, *::before, *::after {
@@ -156,7 +158,7 @@ nav {
 
 .nav-contact:hover { background: var(--primary-dark) !important; color: white; }
 
-/* ========== ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ظ…ظ†ط³ط¯ظ„ط© ط§ظ„ظ…طھط·ظˆط±ط© (ط¯ظ…ط¬ ط§ظ„ظƒظˆط¯ظٹظ†) ========== */
+/* ========== القائمة المنسدلة المتطورة (دمج الكودين) ========== */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -191,7 +193,7 @@ nav {
     transform: rotate(180deg);
 }
 
-/* ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط±ط¦ظٹط³ظٹط© (ط§ظ„ظ…ط³طھظˆظ‰ ط§ظ„ط£ظˆظ„) - طھط¹ظ…ظ„ ط¨ط§ظ„ظ€ hover */
+/* القائمة الرئيسية (المستوى الأول) - تعمل بالـ hover */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -219,7 +221,7 @@ nav {
     pointer-events: auto;
 }
 
-/* ط¹ظ†ط§طµط± ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ط¹ط§ظ…ط© */
+/* عناصر القائمة العامة */
 .dropdown-menu li {
     position: relative;
     list-style: none;
@@ -245,7 +247,7 @@ nav {
     color: var(--primary);
 }
 
-/* ========== طھظ†ط³ظٹظ‚ ط§ظ„ظ‚ظˆط§ط¦ظ… ط§ظ„ظپط±ط¹ظٹط© ط§ظ„ظ…طھط¯ط§ط®ظ„ط© ========== */
+/* ========== تنسيق القوائم الفرعية المتداخلة ========== */
 .dropdown-menu .sub-dropdown {
     position: relative;
     min-height: 40px;
@@ -285,9 +287,9 @@ nav {
     pointer-events: auto;
 }
 
-/* ط¥ط¶ط§ظپط© ظ†طµ ط§ظپطھط±ط§ط¶ظٹ "ط®ط¯ظ…ط§طھ ط¥ظ„ظƒطھط±ظˆظ†ظٹط©" ظ„ظٹظƒظˆظ† ظˆط§ط¶ط­ط§ظ‹ ظ„ظ„ظ…ط³طھط®ط¯ظ… */
+/* إضافة نص افتراضي "خدمات إلكترونية" ليكون واضحاً للمستخدم */
 .dropdown-menu .sub-dropdown > ul:first-child::before {
-    content: "âک° ط®ط¯ظ…ط§طھ ط¥ظ„ظƒطھط±ظˆظ†ظٹط©";
+    content: "☰ خدمات إلكترونية";
     display: block;
     padding: 10px 18px;
     color: var(--text);
@@ -297,13 +299,13 @@ nav {
     cursor: pointer;
 }
 
-/* ط¥ط®ظپط§ط، ط§ظ„ظ†طµ ط§ظ„ط§ظپطھط±ط§ط¶ظٹ ط¥ط°ط§ ظƒط§ظ† ظ‡ظ†ط§ظƒ ط±ط§ط¨ط· ط­ظ‚ظٹظ‚ظٹ */
+/* إخفاء النص الافتراضي إذا كان هناك رابط حقيقي */
 .dropdown-menu .sub-dropdown > a + ul::before,
 .dropdown-menu .sub-dropdown > a::before {
     display: none;
 }
 
-/* ========== ط§ظ„ظ‚ظˆط§ط¦ظ… ط§ظ„ظپط±ط¹ظٹط© (ط§ظ„ظ…ط³طھظˆظ‰ ط§ظ„ط«ط§ظ†ظٹ ظˆط§ظ„ط«ط§ظ„ط«) ========== */
+/* ========== القوائم الفرعية (المستوى الثاني والثالث) ========== */
 .sub-dropdown > .sub-menu {
     position: absolute;
     top: 0;
@@ -323,7 +325,7 @@ nav {
     z-index: 1001;
 }
 
-/* ط¹ظ†ط¯ ط§ظ„طھظ…ط±ظٹط± ط¹ظ„ظ‰ ط§ظ„ظ€ li طھط¸ظ‡ط± ط§ظ„ظ‚ط§ط¦ظ…ط© ط§ظ„ظپط±ط¹ظٹط© */
+/* عند التمرير على الـ li تظهر القائمة الفرعية */
 .sub-dropdown:hover > .sub-menu {
     opacity: 1;
     visibility: visible;
@@ -331,11 +333,11 @@ nav {
     pointer-events: auto;
 }
 
-/* ط³ظ‡ظ… ط§ظ„ظ‚ظˆط§ط¦ظ… ط§ظ„ظپط±ط¹ظٹط© */
+/* سهم القوائم الفرعية */
 .sub-dropdown > a .arrow {
     font-size: 10px;
     margin-right: 8px;
-    transform: rotate(270deg); /* ظپظٹ RTL ط§ظ„ط³ظ‡ظ… ظ„ظ„ظٹط³ط§ط± */
+    transform: rotate(270deg); /* في RTL السهم لليسار */
     transition: transform 0.2s;
 }
 
@@ -343,11 +345,11 @@ nav {
     transform: rotate(270deg) scale(1.1);
 }
 
-/* ط§ظ„ظ…ط³طھظˆظ‰ ط§ظ„ط«ط§ظ„ط« (ظ‚ظˆط§ط¦ظ… ط£ط¹ظ…ظ‚) */
+/* المستوى الثالث (قوائم أعمق) */
 .sub-menu .sub-dropdown .sub-menu {
     position: absolute;
     top: 0;
-    right: 100%; /* طھظپطھط­ ط¨ط§طھط¬ط§ظ‡ ط§ظ„ظٹط³ط§ط± ظ„ط£ظ† ط§ظ„ط§طھط¬ط§ظ‡ RTL */
+    right: 100%; /* تفتح باتجاه اليسار لأن الاتجاه RTL */
     background-color: var(--bg-white);
     box-shadow: var(--shadow-lg);
     border-radius: 8px;
@@ -357,11 +359,11 @@ nav {
     visibility: hidden;
     transform: translateX(15px);
     transition: var(--transition);
-    border-right: 3px solid var(--accent);
+    border-right: 3px solid var(--accent-color);
 }
 
 
-/* طھظ…ط±ظٹط± ظ…ط®طµطµ */
+/* تمرير مخصص */
 .sub-menu::-webkit-scrollbar {
     width: 6px;
 }
@@ -830,9 +832,18 @@ nav {
     cursor: not-allowed;
 }
 
+@media (max-width: 900px) {
+    .college-grid,
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-
-
+@media (max-width: 600px) {
+    .college-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .college-info h3 {
     font-family: var(--font-heading);
@@ -1090,7 +1101,7 @@ footer {
 }
 
 /* ===========================
-   طھط­ط³ظٹظ†ط§طھ RTL ظ„ظ„ظ‚ظˆط§ط¦ظ… ط§ظ„ظ…ظ†ط³ط¯ظ„ط©
+   تحسينات RTL للقوائم المنسدلة
    =========================== */
 [dir="rtl"] .sub-dropdown > .sub-menu {
     right: 100%;
@@ -1106,14 +1117,135 @@ footer {
 }
 
 /* ===========================
-   Responsive - طھظˆط§ظپظ‚ ط§ظ„ط¬ظˆط§ظ„ ظ…ط¹ ط§ظ„ظ‚ظˆط§ط¦ظ…
+   Responsive - توافق الجوال مع القوائم
    =========================== */
+@media (max-width: 900px) {
+    /* زر القائمة */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: var(--radius-sm);
+    }
 
+    .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: var(--transition);
+    }
 
+    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    nav#mainNav {
+        display: none;
+        position: fixed;
+        top: 72px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: var(--bg-white);
+        border-top: 1px solid var(--border);
+        padding: 20px;
+        overflow-y: auto;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 999;
+    }
+
+    nav#mainNav.open { display: flex; }
+
+    .dropdown, .dropbtn, .nav-link {
+        width: 100%;
+    }
+
+    .dropbtn, .nav-link {
+        padding: 12px 16px;
+        border-radius: var(--radius-sm);
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* إعادة تعيين القوائم للجوال */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: var(--bg);
+        border-radius: var(--radius-sm);
+        margin-top: 4px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        transition: none;
+    }
+    
+    .dropdown:hover .dropdown-menu { display: none; }
+    .dropdown.open > .dropdown-menu { display: block; }
+
+    .sub-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: #f0f4f8;
+        margin-top: 4px;
+        padding-right: 20px;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .sub-dropdown:hover > .sub-menu { display: none; }
+    .sub-dropdown.open > .sub-menu { display: block; }
+
+    /* إزالة النص الافتراضي في الشاشات الصغيرة لتجنب التكرار */
+    .dropdown-menu .sub-dropdown > ul:first-child::before {
+        content: "▼ خدمات إلكترونية";
+        background: var(--border);
+    }
+
+    /* باقي تحسينات الجوال */
+    .hero-container { grid-template-columns: 1fr; text-align: center; padding: 60px 24px; }
+    .hero-image { display: none; }
+    .hero-desc { margin: 0 auto 36px; }
+    .hero-buttons { justify-content: center; }
+
+    .news-grid { grid-template-columns: 1fr; max-width: 480px; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .college-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-card { border-left: 1px solid var(--border); }
+    .stat-card:nth-child(2) { border-left: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-side { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .logo-card, .quick-info-card { margin-bottom: 0; }
+}
+
+@media (max-width: 600px) {
+    .college-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-card { border-left: 1px solid var(--border); }
+    .stat-card:nth-child(even) { border-left: none; }
+    .service-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .about-side { grid-template-columns: 1fr; }
+}
 
 /* ===========================
-   طھط­ط³ظٹظ†ط§طھ ط¥ط¶ط§ظپظٹط© ظ„ظ„ظ‚ظˆط§ط¦ظ…
+   تحسينات إضافية للقوائم
    =========================== */
 .dropdown-menu li:first-child {
     border-top-left-radius: var(--radius);
@@ -1125,7 +1257,7 @@ footer {
     border-bottom-right-radius: var(--radius);
 }
 
-/* ط¥ط²ط§ظ„ط© ط§ظ„ط®ط· ط§ظ„ط³ظپظ„ظٹ ظ„ظ„ط±ظˆط§ط¨ط· ظپظٹ ط§ظ„ظ‚ظˆط§ط¦ظ… ط§ظ„ظ…ظ†ط³ط¯ظ„ط© */
+/* إزالة الخط السفلي للروابط في القوائم المنسدلة */
 .dropdown-menu li a,
 .sub-menu li a {
     border-bottom: none;
@@ -1134,7 +1266,59 @@ footer {
 /* ===========================
    Print / Page Layout Styles
    =========================== */
+@media print {
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
 
+    body {
+        width: 210mm;
+        height: 297mm;
+        background: white !important;
+        color: black !important;
+    }
+
+    html {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    header {
+        position: static !important;
+        box-shadow: none !important;
+        border-bottom: 2px solid #333 !important;
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        padding: 10px 20px !important;
+        height: auto !important;
+    }
+
+    nav { display: none; }
+    .menu-toggle { display: none; }
+
+    section { page-break-inside: avoid; }
+
+    .hero-container {
+        grid-template-columns: 1fr !important;
+        padding: 20px !important;
+    }
+
+    .hero-image { display: none; }
+    .hero-bg { display: none; }
+
+    .about-grid { grid-template-columns: 1fr !important; }
+    .about-side { display: none; }
+
+    .college-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .news-grid { grid-template-columns: 1fr !important; }
+    .service-grid { display: none; }
+    .footer-grid { grid-template-columns: 1fr !important; }
+
+    a { text-decoration: underline; }
+}
 
 /* ===========================
    Image Modal / Lightbox
@@ -1208,129 +1392,94 @@ footer {
     color: var(--accent-light);
 }
 
-/* =========================================================
-   FINAL DESKTOP LAYOUT
-   Same desktop layout on desktop, tablet and phone.
-   No responsive rearrangement.
-   ========================================================= */
 
-html {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 1200px !important;
-    overflow-x: auto !important;
+/* تحسينات الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 80%;
+    }
+    
+    .modal-close {
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 900px) {
+    /* إصلاح القوائم المتداخلة في الجوال */
+.sub-dropdown > .sub-menu,
+.sub-menu .sub-dropdown > .sub-menu,
+.sub-menu .sub-menu .sub-menu {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100%;
+    margin-top: 5px;
+    margin-right: 0;
+    padding-right: 20px;
+    box-shadow: none;
+    border: none;
+    background: #f5f7fa;
+    display: none;
 }
 
+.sub-dropdown.open > .sub-menu {
+display: block !important;
+ position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100%;
+    margin-top: 5px;
+    margin-right: 0;
+    padding-right: 20px;
+    box-shadow: none;
+    border: none;
+    background: #f5f7fa;
+    display: none;
+}
+}
+/* إصلاح عرض الموقع على جميع الشاشات */
+html,
 body {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 1200px !important;
-    width: 100% !important;
-    max-width: none !important;
-    overflow-x: visible !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* Desktop navigation */
-.menu-toggle {
-    display: none !important;
+* {
+    box-sizing: border-box;
 }
 
-nav#mainNav {
-    display: flex !important;
+/* الحاويات الرئيسية */
+.container,
+.wrapper,
+.main,
+.content {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
-/* Desktop grid layout */
-.hero-container {
-    grid-template-columns: 1fr 1fr !important;
+/* الصور */
+.container img,
+.wrapper img,
+.main img,
+.content img {
+    max-width: 100%;
+    height: auto;
 }
 
-.about-grid {
-    grid-template-columns: 1fr 340px !important;
-}
 
-.stats-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.college-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.news-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-}
-
-.service-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr !important;
-}
-
-/* Desktop content widths */
-.navbar {
-    max-width: 1400px !important;
-}
-
-.hero-container,
-.stats-grid,
-.about-container,
-.college-grid,
-.news-grid,
-.service-grid,
-.footer-grid {
-    max-width: 1200px !important;
-}
-/* ط¥ط²ط§ظ„ط© ط§ظ„ظپط±ط§ط؛ 
-/* =========================================
-   DESKTOP WIDTH - NO LEFT WHITE SPACE
-   ========================================= */
-
-html {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 1200px !important;
-    min-width: 1200px !important;
-    direction: rtl !important;
-    overflow-x: auto !important;
-}
-
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 1200px !important;
-    min-width: 1200px !important;
-    max-width: none !important;
-    direction: rtl !important;
-    overflow-x: visible !important;
-}
-
-/* ظ„ط§ طھط¬ط¹ظ„ ط§ظ„ظ…ط­طھظˆظ‰ ظٹطھظˆط³ط· ظ†ظپط³ظ‡ ط¨ط§ظ„ظ†ط³ط¨ط© ظ„ط´ط§ط´ط© ط§ظ„ظ‡ط§طھظپ */
-header {
-    width: 1200px !important;
-    margin: 0 !important;
-}
-
-main {
-    width: 1200px !important;
-    margin: 0 !important;
-}
-
-footer {
-    width: 1200px !important;
-    margin: 0 !important;
-}
-
-/* طھط«ط¨ظٹطھ ط§ظ„ط¹ظ†ط§طµط± ط§ظ„ط±ط¦ظٹط³ظٹط© */
-.navbar {
-    width: 1200px !important;
-    max-width: 1200px !important;
-    margin: 0 !important;
-}
-
-.hero-container {
-    width: 1200px !important;
-    max-width: 1200px !important;
-    margin: 0 !important;
-                       }
