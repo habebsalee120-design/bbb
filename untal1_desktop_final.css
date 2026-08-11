@@ -1244,3 +1244,52 @@ nav#mainNav {
 .footer-grid {
     max-width: 1400px;
 }
+/* =========================================
+   SAME DESKTOP DESIGN ON ALL DEVICES
+   ========================================= */
+
+html {
+    min-width: 1200px !important;
+}
+
+body {
+    width: 1200px !important;
+    min-width: 1200px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* منع أي Responsive */
+@media (max-width: 900px) {
+    html {
+        min-width: 1200px !important;
+    }
+
+    body {
+        width: 1200px !important;
+        min-width: 1200px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+
+    .navbar,
+    .hero-container,
+    .about-container,
+    .section-title,
+    .news-grid,
+    .service-grid,
+    .college-grid,
+    .stats-grid,
+    .footer-grid {
+        max-width: 1200px !important;
+        min-width: 0 !important;
+    }
+
+    .menu-toggle {
+        display: none !important;
+    }
+
+    nav#mainNav {
+        display: flex !important;
+    }
+}
