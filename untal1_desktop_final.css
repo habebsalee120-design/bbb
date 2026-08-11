@@ -1,7 +1,4 @@
-html,
-body {
-    min-width: 1200px;
-}
+
 
 /* ===========================
    CSS Variables & Reset
@@ -28,15 +25,20 @@ body {
     --font-body: 'Cairo', sans-serif;
     --font-heading: 'Amiri', serif;
 }
-html, body {
-    overflow-x: hidden;
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* يمنع أي عنصر من الخروج عن الشاشة أفقتياً */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 
 html { scroll-behavior: smooth; }
 
