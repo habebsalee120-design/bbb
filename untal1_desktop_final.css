@@ -1249,26 +1249,26 @@ nav#mainNav {
    ========================================= */
 
 .html {
-    min-width: 1200px !important;
+    min-width: 1400px !important;
 }
 
 .body {
-    width: 1200px !important;
-    min-width: 1200px !important;
-    max-width: 1200px !important;
+    width: 1400px !important;
+    min-width: 1400px !important;
+    max-width: 1400px !important;
     margin: 0  !important;
 }
 
 /* منع أي Responsive */
 @media (max-width: 900px) {
     html {
-        min-width: 1200px !important;
+        min-width: 1400px !important;
     }
 
     body {
-        width: 1200px !important;
-        min-width: 1200px !important;
-        max-width: 1200px !important;
+        width: 1400px !important;
+        min-width: 1400px !important;
+        max-width: 1400px !important;
         margin: 0  !important;
     }
 
@@ -1281,7 +1281,7 @@ nav#mainNav {
     .college-grid,
     .stats-grid,
     .footer-grid {
-        max-width: 1200px !important;
+        max-width: 1400px !important;
         min-width: 0 !important;
     }
 
