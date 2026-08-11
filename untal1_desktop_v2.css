@@ -1,0 +1,40 @@
+/* =========================================================
+   FIXED DESKTOP CANVAS — NO MOBILE RESPONSIVE LAYOUT
+   On a smaller screen the desktop page remains 1400px wide
+   and can be scrolled horizontally.
+   ========================================================= */
+html {
+    width: 100%;
+    min-width: 1400px;
+    overflow-x: auto !important;
+}
+
+body {
+    width: 1400px;
+    min-width: 1400px;
+    max-width: none !important;
+    overflow-x: visible !important;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.hero-container,
+.about-container,
+.news-grid,
+.service-grid,
+.college-grid,
+.stats-grid,
+.footer-grid {
+    /* Keep the original desktop widths */
+}
+
+.menu-toggle {
+    display: none !important;
+}
+
+nav#mainNav {
+    display: flex !important;
+}
