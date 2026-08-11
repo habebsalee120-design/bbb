@@ -24,6 +24,7 @@
     --font-heading: 'Amiri', serif;
 }
 html, body {
+   
     overflow-x: hidden;
 }
 
@@ -57,7 +58,7 @@ img { max-width: 100%; display: block; }
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     background: var(--bg-white);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-sm);
@@ -202,7 +203,7 @@ nav {
     visibility: hidden;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
+    z-index: 10000;
     border: 1px solid var(--border);
     pointer-events: none;
 }
