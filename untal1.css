@@ -1,5 +1,5 @@
 html, body {
-    min-width: 1200px;
+    min-width: 0;
 }
 
 /* ===========================
@@ -1333,7 +1333,7 @@ img {
 }
 
 /* ---------- Mobile ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 
     html,
     body {
