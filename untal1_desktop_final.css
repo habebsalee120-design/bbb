@@ -1256,7 +1256,7 @@ body {
     width: 1200px !important;
     min-width: 1200px !important;
     max-width: 1200px !important;
-    margin: 0 auto !important;
+    margin: 0  !important;
 }
 
 /* منع أي Responsive */
@@ -1269,7 +1269,7 @@ body {
         width: 1200px !important;
         min-width: 1200px !important;
         max-width: 1200px !important;
-        margin: 0 auto !important;
+        margin: 0  !important;
     }
 
     .navbar,
