@@ -480,7 +480,7 @@ nav {
 .btn-secondary:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
 
 .hero-img-wrapper {
-    width: 130%;
+    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,.3);
