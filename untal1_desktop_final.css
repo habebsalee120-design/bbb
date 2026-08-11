@@ -1282,3 +1282,32 @@ nav#mainNav {
 .footer-grid {
     max-width: 1200px !important;
 }
+/* إزالة الفراغ الأبيض الجانبي */
+
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 1200px !important;
+    width: 1200px !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 1200px !important;
+    width: 1200px !important;
+    max-width: 1200px !important;
+}
+
+/* منع أي عنصر من دفع الصفحة لليمين */
+header,
+main,
+footer,
+.hero,
+.stats,
+.about,
+.colleges,
+.news,
+.services {
+    margin-left: 0 !important;
+}
