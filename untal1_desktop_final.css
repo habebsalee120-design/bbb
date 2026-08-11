@@ -1246,48 +1246,83 @@ nav#mainNav {
 }
 /* =========================================
    SAME DESKTOP DESIGN ON ALL DEVICES
+   ========================================= 
+/* =========================================
+   DESKTOP + MOBILE
+   نفس تصميم سطح المكتب على جميع الأجهزة
    ========================================= */
 
 html {
-    width: 100% !important;
-   paddind:0;
-   margin:0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 body {
-    width: 100% !important;
-    min-width: 1200px !important;
-    max-width: 1200px !important;
-    margin: 0  !important;
-   padding: 0 ;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 1200px;
 }
 
-/* منع أي Responsive */
-@media (max-width: 1200px) {
+/* الكمبيوتر */
+@media (min-width: 901px) {
+
+    body {
+        width: 100%;
+        min-width: 1200px;
+        overflow-x: auto;
+    }
+}
+
+
+/* الهاتف والتابلت
+   إبقاء تصميم سطح المكتب كما هو */
+@media (max-width: 900px) {
+
     html {
-        min-width: 1200px !important;
+        width: 1200px;
+        min-width: 1200px;
     }
 
     body {
         width: 1200px !important;
         min-width: 1200px !important;
-        max-width: 1200px !important;
-        margin: 0  !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .navbar,
-    .hero-container,
-    .about-container,
-    .section-title,
-    .news-grid,
-    .service-grid,
-    .college-grid,
-    .stats-grid,
+    /* لا تحول التصميم إلى Mobile Layout */
+    .hero-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .college-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
     .footer-grid {
-        max-width: 1400px !important;
-        min-width: 0 !important;
+        grid-template-columns: repeat(4, 1fr) !important;
     }
 
+    /* إلغاء تحويل القائمة إلى قائمة هاتف */
     .menu-toggle {
         display: none !important;
     }
@@ -1295,19 +1330,4 @@ body {
     nav#mainNav {
         display: flex !important;
     }
-}
-html {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-header,
-main,
-footer {
-    margin-left: 0 !important;
 }
