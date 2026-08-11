@@ -355,7 +355,6 @@ nav {
     border-right: 3px solid var(--accent-color);
 }
 
-
 /* تمرير مخصص */
 .sub-menu::-webkit-scrollbar {
     width: 6px;
@@ -825,8 +824,6 @@ nav {
     cursor: not-allowed;
 }
 
-
-
 .college-info h3 {
     font-family: var(--font-heading);
     font-size: 18px;
@@ -1102,8 +1099,6 @@ footer {
    Responsive - توافق الجوال مع القوائم
    =========================== */
 
-
-
 /* ===========================
    تحسينات إضافية للقوائم
    =========================== */
@@ -1127,7 +1122,6 @@ footer {
    Print / Page Layout Styles
    =========================== */
 
-
 /* ===========================
    Image Modal / Lightbox
    =========================== */
@@ -1150,6 +1144,15 @@ footer {
     display: flex !important;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .modal-content {
     max-width: 90%;
     max-height: 90%;
@@ -1159,7 +1162,16 @@ footer {
     animation: slideIn 0.3s ease;
 }
 
-
+@keyframes slideIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 .modal-close {
     position: absolute;
@@ -1181,130 +1193,5 @@ footer {
 .modal-close:hover {
     color: var(--accent-light);
 }
-        /* التجاوب مع الأجهزة الذكية */
-        @media (max-width: 900px) {
-            .main-header {
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
 
-            nav {
-                width: 100%;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                gap: 10px;
-                justify-content: flex-start;
-            }
-
-            nav ul li {
-                margin: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                width: 100%;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            nav.open {
-                max-height: 500px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-                margin-top: 15px;
-            }
-
-            nav ul li {
-                width: 100%;
-            }
-
-            nav ul li a {
-                width: 100%;
-                padding: 12px 10px;
-            }
-
-            nav ul li .dropdown {
-                display: block;
-                position: static;
-                box-shadow: none;
-                padding-right: 15px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            nav ul li.open > .dropdown {
-                max-height: 1000px;
-            }
-
-            nav ul li .dropdown a {
-                padding: 10px 15px;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        .body {
-            font-family: 'Cairo', sans-serif;
-        }
-        .info-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .body {
-            font-family: 'Cairo', sans-serif;
-
-        }
-        .text-mobile {
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .text-mobile {
-                display: none;
-            }
-        }
-        @media (min-width: 769px) {
-            .text-mobile {
-                display: block;
-            }
-        }
-        header,
-.main-header {
-  width: 100%;
-  max-width: 100%;
-}
-
-.main-header {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.main-header > * {
-  min-width: 0;
-}
-
-
-        
-
-
+/* تحسينات الشاشات الصغيرة */
