@@ -1249,26 +1249,26 @@ nav#mainNav {
    ========================================= */
 
 html {
-    min-width: 1400px !important;
+    min-width: 1200px !important;
 }
 
 body {
-    width: 1400px !important;
-    min-width: 1400px !important;
-    max-width: 1400px !important;
+    width: 1200px !important;
+    min-width: 1200px !important;
+    max-width: 1200px !important;
     margin: 0  !important;
 }
 
 /* منع أي Responsive */
 @media (max-width: 900px) {
     html {
-        min-width: 1400px !important;
+        min-width: 1200px !important;
     }
 
     body {
-        width: 1400px !important;
-        min-width: 1400px !important;
-        max-width: 1400px !important;
+        width: 1200px !important;
+        min-width: 1200px !important;
+        max-width: 1200px !important;
         margin: 0  !important;
     }
 
