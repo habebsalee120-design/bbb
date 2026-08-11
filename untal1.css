@@ -1333,7 +1333,7 @@ img {
 }
 
 /* ---------- Mobile ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 
     html,
     body {
@@ -1708,7 +1708,7 @@ iframe {
    MOBILE
 ============================== */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
 
     html,
     body {
