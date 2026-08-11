@@ -1215,81 +1215,63 @@ footer {
    Same desktop layout on desktop, tablet and phone.
    No responsive rearrangement.
    ========================================================= */
-
-html {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 1200px !important;
-    overflow-x: auto !important;
-}
-
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    min-width: 1200px !important;
-    width: 100% !important;
-    max-width: none !important;
-    overflow-x: visible !important;
-}
-
-/* Desktop navigation */
-.menu-toggle {
-    display: none !important;
-}
-
-nav#mainNav {
-    display: flex !important;
-}
-
-/* Desktop grid layout */
-.hero-container {
-    grid-template-columns: 1fr 1fr !important;
-}
-
-.about-grid {
-    grid-template-columns: 1fr 340px !important;
-}
-
-.stats-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.college-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.news-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-}
-
-.service-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-}
-
-.footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr !important;
-}
-
-/* Desktop content widths */
-.navbar {
-    max-width: 1400px !important;
-}
-
-.hero-container,
-.stats-grid,
-.about-container,
-.college-grid,
-.news-grid,
-.service-grid,
-.footer-grid {
-    max-width: 1200px !important;
-}
-/* ط¥ط²ط§ظ„ط© ط§ظ„ظپط±ط§ط؛ 
 /* =========================================
-   DESKTOP WIDTH - NO LEFT WHITE SPACE
+   FIX OVERFLOW & RESPONSIVE LAYOUT
    ========================================= */
-* {
-    outline: 1px solid red !important;
+
+/* منع الخروج الأفقي على مستوى المستند */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
+/* تحويل الشبكات الصلبة إلى أعمدة متجاوبة في الشاشات الصغيرة */
+@media (max-width: 992px) {
+    .navbar,
+    .hero-container,
+    .stats-grid,
+    .about-container,
+    .college-grid,
+    .news-grid,
+    .service-grid,
+    .footer-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .hero-container,
+    .about-grid,
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .stats-grid,
+    .college-grid,
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero-img-wrapper {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid,
+    .college-grid,
+    .service-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
 
