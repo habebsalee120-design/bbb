@@ -1253,35 +1253,3 @@ body {
     max-width: 100% !important;
 }
 
-/* جعل الأقسام تمتد بعرض الشاشة */
-header,
-main,
-section,
-footer {
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-/* إزالة التوسيط الذي يسبب الفراغ */
-.navbar,
-.hero-container,
-.about-container,
-.section-title,
-.news-grid,
-.service-grid,
-.college-grid,
-.stats-grid,
-.footer-grid {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-* {
-    box-sizing: border-box;
-}
-
-.body {
-    overflow-x: hidden !important;
-}
-
-
