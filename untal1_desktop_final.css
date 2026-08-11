@@ -1276,3 +1276,10 @@ footer {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden !important;
+}
