@@ -1288,4 +1288,8 @@ nav#mainNav {
 /* =========================================
    DESKTOP WIDTH - NO LEFT WHITE SPACE
    ========================================= */
+* {
+    outline: 1px solid red !important;
+}
+
 
