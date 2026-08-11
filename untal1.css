@@ -1,3 +1,7 @@
+html, body {
+    min-width: 0;
+}
+
 /* ===========================
    CSS Variables & Reset
    =========================== */
@@ -24,14 +28,7 @@
     --font-heading: 'Amiri', serif;
 }
 html, body {
-     width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: auto;
-}
-* {
-    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -359,7 +356,7 @@ nav {
     visibility: hidden;
     transform: translateX(15px);
     transition: var(--transition);
-    border-right: 3px solid var(--accent-color);
+    border-right: 3px solid var(--accent);
 }
 
 
@@ -480,7 +477,7 @@ nav {
 .btn-secondary:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
 
 .hero-img-wrapper {
-    width: 100%;
+    width: 130%;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,.3);
@@ -832,18 +829,9 @@ nav {
     cursor: not-allowed;
 }
 
-@media (max-width: 900px) {
-    .college-grid,
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    .college-grid {
-        grid-template-columns: 1fr;
-    }
-}
+
+
 
 .college-info h3 {
     font-family: var(--font-heading);
@@ -1119,130 +1107,9 @@ footer {
 /* ===========================
    Responsive - توافق الجوال مع القوائم
    =========================== */
-@media (max-width: 900px) {
-    /* زر القائمة */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: var(--radius-sm);
-    }
 
-    .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: var(--text);
-        border-radius: 2px;
-        transition: var(--transition);
-    }
 
-    .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .menu-toggle.active span:nth-child(2) { opacity: 0; }
-    .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    nav#mainNav {
-        display: none;
-        position: fixed;
-        top: 72px;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: var(--bg-white);
-        border-top: 1px solid var(--border);
-        padding: 20px;
-        overflow-y: auto;
-        flex-direction: column;
-        gap: 4px;
-        z-index: 999;
-    }
-
-    nav#mainNav.open { display: flex; }
-
-    .dropdown, .dropbtn, .nav-link {
-        width: 100%;
-    }
-
-    .dropbtn, .nav-link {
-        padding: 12px 16px;
-        border-radius: var(--radius-sm);
-        border-bottom: 1px solid var(--border);
-    }
-
-    /* إعادة تعيين القوائم للجوال */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: var(--bg);
-        border-radius: var(--radius-sm);
-        margin-top: 4px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        transition: none;
-    }
-    
-    .dropdown:hover .dropdown-menu { display: none; }
-    .dropdown.open > .dropdown-menu { display: block; }
-
-    .sub-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: #f0f4f8;
-        margin-top: 4px;
-        padding-right: 20px;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        max-height: none;
-        overflow-y: visible;
-    }
-    
-    .sub-dropdown:hover > .sub-menu { display: none; }
-    .sub-dropdown.open > .sub-menu { display: block; }
-
-    /* إزالة النص الافتراضي في الشاشات الصغيرة لتجنب التكرار */
-    .dropdown-menu .sub-dropdown > ul:first-child::before {
-        content: "▼ خدمات إلكترونية";
-        background: var(--border);
-    }
-
-    /* باقي تحسينات الجوال */
-    .hero-container { grid-template-columns: 1fr; text-align: center; padding: 60px 24px; }
-    .hero-image { display: none; }
-    .hero-desc { margin: 0 auto 36px; }
-    .hero-buttons { justify-content: center; }
-
-    .news-grid { grid-template-columns: 1fr; max-width: 480px; }
-    .service-grid { grid-template-columns: repeat(2, 1fr); }
-    .college-grid { grid-template-columns: repeat(2, 1fr); }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card { border-left: 1px solid var(--border); }
-    .stat-card:nth-child(2) { border-left: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .footer-brand { grid-column: 1 / -1; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-side { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .logo-card, .quick-info-card { margin-bottom: 0; }
-}
-
-@media (max-width: 600px) {
-    .college-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-card { border-left: 1px solid var(--border); }
-    .stat-card:nth-child(even) { border-left: none; }
-    .service-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .about-side { grid-template-columns: 1fr; }
-}
 
 /* ===========================
    تحسينات إضافية للقوائم
@@ -1266,59 +1133,7 @@ footer {
 /* ===========================
    Print / Page Layout Styles
    =========================== */
-@media print {
-    * {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
 
-    body {
-        width: 210mm;
-        height: 297mm;
-        background: white !important;
-        color: black !important;
-    }
-
-    html {
-        width: 210mm;
-        height: 297mm;
-    }
-
-    header {
-        position: static !important;
-        box-shadow: none !important;
-        border-bottom: 2px solid #333 !important;
-        margin-bottom: 20px;
-    }
-
-    .navbar {
-        padding: 10px 20px !important;
-        height: auto !important;
-    }
-
-    nav { display: none; }
-    .menu-toggle { display: none; }
-
-    section { page-break-inside: avoid; }
-
-    .hero-container {
-        grid-template-columns: 1fr !important;
-        padding: 20px !important;
-    }
-
-    .hero-image { display: none; }
-    .hero-bg { display: none; }
-
-    .about-grid { grid-template-columns: 1fr !important; }
-    .about-side { display: none; }
-
-    .college-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    .news-grid { grid-template-columns: 1fr !important; }
-    .service-grid { display: none; }
-    .footer-grid { grid-template-columns: 1fr !important; }
-
-    a { text-decoration: underline; }
-}
 
 /* ===========================
    Image Modal / Lightbox
@@ -1393,364 +1208,469 @@ footer {
 }
 
 
-/* تحسينات الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .modal-content {
-        max-width: 95%;
-        max-height: 80%;
-    }
-    
-    .modal-close {
-        top: 15px;
-        right: 15px;
-        font-size: 30px;
-        width: 40px;
-        height: 40px;
-    }
-}
-@media (max-width: 900px) {
-    /* إصلاح القوائم المتداخلة في الجوال */
-.sub-dropdown > .sub-menu,
-.sub-menu .sub-dropdown > .sub-menu,
-.sub-menu .sub-menu .sub-menu {
-    position: static !important;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100%;
-    margin-top: 5px;
-    margin-right: 0;
-    padding-right: 20px;
-    box-shadow: none;
-    border: none;
-    background: #f5f7fa;
-    display: none;
-}
+/* =========================================================
+   RESPONSIVE FIX
+   Desktop + Tablet + Mobile
+   ========================================================= */
 
-.sub-dropdown.open > .sub-menu {
-display: block !important;
- position: static !important;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100%;
-    margin-top: 5px;
-    margin-right: 0;
-    padding-right: 20px;
-    box-shadow: none;
-    border: none;
-    background: #f5f7fa;
-    display: none;
-}
-}
-/* إصلاح عرض الموقع على جميع الشاشات */
 html,
 body {
     width: 100%;
+    min-width: 0 !important;
     max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* الحاويات الرئيسية */
-.container,
-.wrapper,
-.main,
-.content {
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-}
-
-/* الصور */
-.container img,
-.wrapper img,
-.main img,
-.content img {
-    max-width: 100%;
-    height: auto;
-}
-/* ==========================================
-   الحل النهائي والقطعي للمساحة البيضاء
-   ========================================== */
-
-/* 1. إجبار الجذور على عدم تجاوز الشاشة نهائياً */
-html, body {
-    width: 100% !important;
-    max-width: 100vw !important;
     overflow-x: hidden !important;
-    position: relative !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* 2. إصلاح القوائم الفرعية التي تخرج خارج الشاشة وتسبب البروز */
-.dropdown-menu, 
-.sub-menu {
-    max-width: 90vw !important;
-    box-sizing: border-box !important;
-}
-
-/* إصلاح اتجاه فتح القوائم في وضع RTL لتفتح للداخل بدلاً من الخروج لليسار */
-[dir="rtl"] .dropdown-menu .sub-dropdown > .sub-menu,
-[dir="rtl"] .sub-menu .sub-dropdown .sub-menu {
-    right: auto !important;
-    left: 0 !important; /* تفتح للداخل لتمنع دفع الصفحة للنسخة البيضاء */
-}
-
-/* 3. حصر جميع الحاويات */
-*, *::before, *::after {
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-}
-/* =========================================
-   Responsive Fix - Mobile
-========================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 body {
-    margin: 0;
+    min-width: 0 !important;
 }
 
-/* الحاويات */
-.container {
-    width: min(1200px, 92%);
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* =========================================
-   Navbar
-========================================= */
-
-.navbar,
-nav {
+/* ---------- Header ---------- */
+.navbar {
     width: 100%;
-    max-width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-.navbar .container,
-nav .container {
-    width: 92%;
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    flex: 0 0 auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 5px auto;
+    background: var(--primary-dark);
+    border-radius: 3px;
+    transition: .25s ease;
+}
+
+nav#mainNav {
+    min-width: 0;
+}
+
+/* ---------- Hero ---------- */
+.hero-container {
+    width: min(1200px, 100%);
     max-width: 1200px;
 }
 
-/* =========================================
-   Hero
-========================================= */
-
-.hero {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.hero .container {
-    width: min(1200px, 92%);
-    margin: auto;
-}
-
-.hero-content {
-    max-width: 100%;
-}
-
-/* =========================================
-   Sections
-========================================= */
-
-section {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-/* =========================================
-   Cards / Grid
-========================================= */
-
-.cards,
-.about-grid,
-.info-grid,
-.features-grid,
-.content-grid {
+.hero-img-wrapper {
     width: 100%;
     max-width: 100%;
 }
 
-/* =========================================
-   Images
-========================================= */
+.hero-image {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* ---------- Generic grid safety ---------- */
+.hero-container > *,
+.about-grid > *,
+.stats-grid > *,
+.college-grid > *,
+.news-grid > *,
+.service-grid > *,
+.footer-grid > * {
+    min-width: 0;
+}
 
 img {
     max-width: 100%;
-    height: auto;
 }
 
-/* =========================================
-   Mobile
-========================================= */
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
 
-@media (max-width: 768px) {
+    .navbar {
+        padding: 0 18px;
+    }
 
+    nav#mainNav {
+        gap: 0;
+    }
+
+    .nav-link,
+    .dropbtn {
+        font-size: 12px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 28px;
+    }
+
+    .college-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+
+    html,
     body {
-        font-size: 14px;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 
-    .container {
-        width: 92%;
-        max-width: 92%;
+    header {
+        position: sticky;
+        top: 0;
     }
 
-    /* Navbar */
-    .navbar .container,
-    nav .container {
-        width: 92%;
-        max-width: 92%;
+    .navbar {
+        min-height: 68px;
+        height: auto;
+        padding: 10px 14px;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
-    /* إخفاء العناصر التي تسبب خروج الصفحة */
-    .navbar ul,
-    nav ul {
+    .logo {
+        min-width: 0;
+        flex: 1 1 auto;
+        gap: 8px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .logo-text p {
+        font-size: 9px;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        order: 2;
+    }
+
+    nav#mainNav {
+        display: none !important;
+        width: 100%;
         max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 12px;
+        border-top: 1px solid var(--border);
+        overflow-y: auto;
+        max-height: calc(100vh - 70px);
+    }
+
+    nav#mainNav.open {
+        display: flex !important;
+    }
+
+    nav#mainNav > .nav-link,
+    nav#mainNav > .dropdown {
+        width: 100%;
+    }
+
+    nav#mainNav > .nav-link,
+    nav#mainNav .dropbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 12px;
+        font-size: 14px;
+        white-space: normal;
+        text-align: right;
+    }
+
+    nav#mainNav .nav-contact {
+        border-radius: 8px;
+        margin: 3px 0;
+    }
+
+    /* Mobile dropdowns */
+    nav#mainNav .dropdown {
+        display: block;
+        padding: 0;
+    }
+
+    nav#mainNav .dropdown-menu,
+    nav#mainNav .sub-dropdown > .sub-menu,
+    nav#mainNav .sub-menu .sub-dropdown .sub-menu {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 8px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        display: none;
+    }
+
+    nav#mainNav .dropdown.open > .dropdown-menu,
+    nav#mainNav .sub-dropdown.open > .sub-menu {
+        display: block !important;
+    }
+
+    nav#mainNav .dropdown-menu li a,
+    nav#mainNav .sub-menu li a {
+        width: 100%;
+        min-height: 42px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    nav#mainNav .sub-dropdown {
+        min-height: 0;
+    }
+
+    /* Hide desktop-only pseudo heading on mobile */
+    .dropdown-menu .sub-dropdown > ul:first-child::before {
+        display: none;
     }
 
     /* Hero */
     .hero {
-        min-height: auto;
-        height: auto;
-        padding: 70px 0;
+        min-height: 0;
     }
 
-    .hero .container {
-        width: 92%;
-        max-width: 92%;
-    }
-
-    .hero-content {
+    .hero-container {
         width: 100%;
         max-width: 100%;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+        padding: 55px 18px;
         text-align: center;
     }
 
-    .hero h1 {
-        font-size: 28px;
-        line-height: 1.5;
-    }
-
-    .hero p {
-        font-size: 15px;
-        line-height: 2;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .hero-buttons a,
-    .hero-buttons button {
-        max-width: 100%;
-    }
-
-    /* كل Grid يتحول إلى عمود */
-    .cards,
-    .about-grid,
-    .info-grid,
-    .features-grid,
-    .content-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* Flex يتحول إلى عمود */
-    .about-container,
-    .content-container {
-        flex-direction: column !important;
-    }
-
-    /* الأعمدة */
-    .sidebar,
-    .main-content,
-    .about-content,
-    .about-sidebar {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* البطاقات */
-    .card {
+    .hero-text {
         width: 100%;
         max-width: 100%;
     }
 
-    /* العناوين */
+    .hero-text h2 {
+        font-size: clamp(30px, 8vw, 44px);
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-desc {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.9;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-img-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .stat-card {
+        padding: 25px 12px;
+    }
+
+    /* Sections */
+    .about,
+    .colleges,
+    .news,
+    .services,
+    .announcements {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 22px;
+    }
+
+    .about-block {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .about-block p {
+        overflow-wrap: anywhere;
+    }
+
+    .about-side {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .logo-card,
+    .quick-info-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .college-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+
     .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
         font-size: 28px;
     }
 }
 
-/* =========================================
-   Small Mobile
-========================================= */
-
+/* ---------- Small phones ---------- */
 @media (max-width: 480px) {
 
-    .container {
-        width: 94%;
-        max-width: 94%;
+    .navbar {
+        padding: 8px 10px;
     }
 
-    .hero {
-        padding: 50px 0;
+    .logo-icon {
+        width: 38px;
+        height: 38px;
     }
 
-    .hero h1 {
-        font-size: 23px;
-    }
-
-    .hero p {
+    .logo-text h1 {
         font-size: 14px;
-        line-height: 1.9;
+    }
+
+    .hero-container {
+        padding: 45px 14px;
+    }
+
+    .hero-text h2 {
+        font-size: 29px;
     }
 
     .hero-buttons {
         flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
-    .hero-buttons a,
-    .hero-buttons button {
-        width: 100%;
-        max-width: 280px;
-        margin: auto;
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: min(100%, 280px);
+        text-align: center;
     }
 
-    .section-title {
-        font-size: 24px;
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .about-block {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .about-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-text-large {
+        font-size: 46px;
+    }
+
+    .news-modal-content {
+        width: calc(100% - 20px);
     }
 }
 
+/* Hamburger animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
 
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
